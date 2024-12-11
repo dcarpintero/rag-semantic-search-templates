@@ -99,7 +99,7 @@ Some popular vector database solutions are:
 
 When implementing RAG systems, the initial vector similarity search often casts a wide net, retrieving a set of potentially relevant documents. However, these results might not always be ordered in a way that best serves our needs. This is where reranking comes in – a crucial step that refines and reorders the initial search results to improve the final quality of retrieved documents.
 
-A convenient starting point to experiment with Reranking is [Cohere Rerank](https://docs.cohere.com/v2/docs/rerank-overview) endpoint and the [Sentence Transformers](https://www.sbert.net/examples/applications/retrieve_rerank/README.html) framework.
+A convenient starting point to experiment with Reranking is [Cohere Rerank](https://docs.cohere.com/v2/docs/rerank-overview) endpoint, [Cohere Rerank 3.5](https://cohere.com/blog/rerank-3pt5), and the [Sentence Transformers](https://www.sbert.net/examples/applications/retrieve_rerank/README.html) framework.
 
 ## RAG Evaluation
 
