@@ -96,3 +96,18 @@ When implementing RAG systems, the initial vector similarity search often casts 
 
 A convenient starting point to experiment with Reranking is [Cohere Rerank](https://docs.cohere.com/v2/docs/rerank-overview) endpoint and the [Sentence Transformers](https://www.sbert.net/examples/applications/retrieve_rerank/README.html) framework.
 
+## RAG Evaluation
+
+Developments in how to evaluate RAG models are still ongoing. In practice a common approach is to evaluate on:
+
+- Fluency
+
+- Perceived Utility
+
+- Citation precision
+
+- Faithfulness
+
+- Answer relevance
+
+You might find more insights on this topic in the paper [Evaluating verifiability in generative search engines].
