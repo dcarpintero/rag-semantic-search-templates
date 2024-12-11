@@ -1,4 +1,4 @@
-# Semantic Search and Retrieval-Augmented Generation in Practice
+# RAG & Semantic Search in Practice
 
 Retrieval-Augmented Generation (RAG) is a powerful approach that enhances Large Language Models (LLMs) by combining their generative capabilities with the ability to access and incorporate external knowledge during the response generation process.
 
