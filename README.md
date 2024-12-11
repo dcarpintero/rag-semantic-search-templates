@@ -80,7 +80,7 @@ When choosing an embedding service, consider factors like: cost per token, vecto
 
 ## Vector Databases
 
-When working with embeddings in production systems, we need specialized databases designed to efficiently store, manage, and search through high-dimensional vectors. Vector databases are purpose-built systems that excel at performing similarity searches across millions or even billions of vectors with remarkable speed and efficiency.
+When working with embeddings in production systems, we need specialized databases designed to efficiently store, manage, and search through high-dimensional vectors. Vector databases are purpose-built systems that excel at performing similarity searches across millions or even billions of vectors with remarkable speed and efficiency. An additional advantage is that a vector database allows to add or delete vectors without having to rebuild the index. They also provide filtering capabilities and customization on search operators. 
 
 Some popular vector database solutions are:
 
@@ -89,4 +89,10 @@ Some popular vector database solutions are:
 - [Weaviate](https://weaviate.io/): is an open-source vector database that combines vector search with structured data storage. It offers unique features like GraphQL support and the ability to create multiple vector indexes for the same data using different embedding models. This can be particularly useful when different aspects of your data require different types of semantic understanding.
 
 - [Milvus](https://milvus.io/) is another open-source solution that excels at handling massive vector datasets. It offers flexible deployment options (cloud, on-premises, or hybrid) and supports multiple indexing methods.
+
+## Reranking
+
+When implementing RAG systems, the initial vector similarity search often casts a wide net, retrieving a set of potentially relevant documents. However, these results might not always be ordered in a way that best serves our needs. This is where reranking comes in – a crucial step that refines and reorders the initial search results to improve the final quality of retrieved documents.
+
+A convenient starting point to experiment with Reranking is [Cohere Rerank](https://docs.cohere.com/v2/docs/rerank-overview) endpoint and the [Sentence Transformers](https://www.sbert.net/examples/applications/retrieve_rerank/README.html) framework.
 
