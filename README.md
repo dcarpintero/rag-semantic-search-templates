@@ -4,6 +4,11 @@ Retrieval-Augmented Generation (RAG) is a powerful approach that enhances Large 
 
 Semantic Search goes beyond traditional keyword matching by understanding the meaning and intent behind search queries - it uses dense vector representations (embeddings) to capture the semantic meaning of both the query and the documents in the knowledge base, allowing it to find relevant information even when the exact keywords do not match. When integrated with RAG, Semantic Search serves as an advanced retrieval mechanism that helps the LLM find the most contextually relevant information from a custom knowledge base.
 
+In this guide we provide practical notebooks and tips to dive into this topic:
+
+- [rag.llamaindex.nb.ipynb](./rag.llamaindex.nb.ipynb): demonstrates how to implement a basic RAG pipeline with [LlamaIndex](https://www.llamaindex.ai/).
+- [rag.local.nb.ipynb](./rag.local.nb.ipynb): implements a RAG with a local model.
+
 ## ETL
 
 The first step when implementing a RAG system with Semantic Search is to prepare a knowledge base. This involves collecting and preprocessing documents - these could be web pages, PDFs, internal docs, or any text-based information.
@@ -100,14 +105,14 @@ A convenient starting point to experiment with Reranking is [Cohere Rerank](http
 
 Developments in how to evaluate RAG models are still ongoing. In practice a common approach is to evaluate on:
 
-- Fluency
+- Fluency: how natural, coherent, and grammatically correct to ensure effective communication. Modern systems generally achieving strong fluency ratings around 4.5/5.0.
 
-- Perceived Utility
+- Perceived Utility: how helpful and informative the responses are from the user's perspective.
 
-- Citation precision
+- Citation precision: whether citations actually support the generated statements, calculated as the proportion of accurate citations relative to total citations used. Current commercial systems achieve around 74.5% citation precision.
 
-- Faithfulness
+- Faithfulness: whether the generated content accurately reflects the information in retrieved documents without fabrication or distortion. This metric is crucial for maintaining trust and reliability. 
 
-- Answer relevance
+- Answer relevance: how well responses align with query intent and provide appropriate information depth for user needs.
 
-You might find more insights on this topic in the paper [Evaluating verifiability in generative search engines].
+You might find more insights on this topic in the paper [Evaluating verifiability in generative search engines](https://arxiv.org/abs/2304.09848).
