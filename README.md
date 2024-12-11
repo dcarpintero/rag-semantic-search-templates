@@ -45,11 +45,11 @@ f32_embeddings = model.encode(corpus,
                               show_progress_bar=True)
 ```
 
-### LlamaIndex
+#### LlamaIndex
 
-[LlamaIndex](https://docs.llamaindex.ai/en/stable/) is another framework that provides an abstraction layer over the chunking and vectorization layer.
+[LlamaIndex](https://docs.llamaindex.ai/en/stable/) provides a convenient abstraction layer that simplifies the complex process of document processing, chunking, and vectorization. 
 
-This example aims at vectorizing documents at paragraph level defining chunks of size `1024` with an overlap of `32:
+Here is an example that demonstrates how to create a vector index from documents using paragraph-level chunking, defining chunks of size `1024` with an overlap of `32:
 
 ```python
 from llama_index.core import Settings
@@ -66,4 +66,27 @@ index = VectorStoreIndex.from_documents(
 )
 ```
 
+#### LLM APIs
+
+Many leading AI companies provide specialized embedding APIs that offer state-of-the-art performance for various use cases. 
+
+- [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings): OpenAI's embedding models, particularly `text-embedding-ada-002`, are widely used in production systems.
+
+- [Cohere Embeddings](https://docs.cohere.com/v2/docs/embeddings): Cohere provides specialized embedding models optimized for different tasks like semantic search, topic clustering, and text classification. Their models support multiple languages and offer different size options to balance performance and efficiency.
+
+- [Anthropic Embeddings](https://docs.anthropic.com/en/docs/build-with-claude/embeddings)
+
+When choosing an embedding service, consider factors like: cost per token, vector dimensionality (this might have an impact on your vector database), supported languages, and compability with your LLM.
+
+## Vector Databases
+
+When working with embeddings in production systems, we need specialized databases designed to efficiently store, manage, and search through high-dimensional vectors. Vector databases are purpose-built systems that excel at performing similarity searches across millions or even billions of vectors with remarkable speed and efficiency.
+
+Some popular vector database solutions are:
+
+- [Pinecone](https://www.pinecone.io/): a fully managed vector database service that emphasizes ease of use and scalability. It handles the complexity of infrastructure management. Pinecone is particularly known for its consistent performance at scale and its ability to handle real-time updates efficiently.
+
+- [Weaviate](https://weaviate.io/): is an open-source vector database that combines vector search with structured data storage. It offers unique features like GraphQL support and the ability to create multiple vector indexes for the same data using different embedding models. This can be particularly useful when different aspects of your data require different types of semantic understanding.
+
+- [Milvus](https://milvus.io/) is another open-source solution that excels at handling massive vector datasets. It offers flexible deployment options (cloud, on-premises, or hybrid) and supports multiple indexing methods.
 
