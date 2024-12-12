@@ -6,12 +6,15 @@ Semantic Search goes beyond traditional keyword matching by understanding the me
 
 In this guide we provide practical notebooks and tips to dive into this topic:
 
-- [rag.llamaindex.nb.ipynb](./rag.llamaindex.nb.ipynb): demonstrates how to implement a basic RAG pipeline with [LlamaIndex](https://www.llamaindex.ai/).
-- [rag.local.nb.ipynb](./rag.local.nb.ipynb): implements a RAG with a local quantized model and [LangChain](https://python.langchain.com/docs/introduction/).
+- [rag.llamaindex.nb.ipynb](./rag.llamaindex.nb.ipynb): RAG pipeline with [LlamaIndex](https://www.llamaindex.ai/).
+- [rag.langchain.nb.ipynb](./rag.langchain.nb.ipynb): RAG pipeline with [LangChain](https://python.langchain.com/docs/introduction/), illustrates chunking and hallucination.
+- [rag.local.nb.ipynb](./rag.local.nb.ipynb): RAG pipeline with a local quantized model.
 
-## ETL
+![RAG Architecture](./static/rag-architecture.png)
 
-The first step when implementing a RAG system with Semantic Search is to prepare a knowledge base. This involves collecting and preprocessing documents - these could be web pages, PDFs, internal docs, or any text-based information.
+## Data Ingestion 
+
+The first step when implementing a RAG system with Semantic Search is to prepare a knowledge base. This involves collecting and preprocessing documents such as web pages, PDFs, internal docs, or any text-based information.
 
 ## Vectorization into High-Dimensional Embeddings
 
@@ -140,3 +143,9 @@ Developments in how to evaluate RAG models are still ongoing. In practice a comm
 - Answer relevance: how well responses align with query intent.
 
 You might find more insights on this topic in the paper [Evaluating verifiability in generative search engines](https://arxiv.org/abs/2304.09848).
+
+## User Interface
+
+There are many open source alternatives that provide a ChatGPT like experience. One of the most popular ones is [Open WebUI](https://docs.openwebui.com/):
+
+![Open WebUI](https://docs.openwebui.com/assets/images/demo-d3952c8561c4808c1d447fc061c71174.gif)
