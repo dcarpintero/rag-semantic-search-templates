@@ -4,11 +4,11 @@ Retrieval-Augmented Generation (RAG) is a powerful approach that enhances Large 
 
 Semantic Search goes beyond traditional keyword matching by understanding the meaning and intent behind search queries - it uses dense vector representations (embeddings) to capture the semantic meaning of both the query and the documents in the knowledge base, allowing it to find relevant information even when the exact keywords do not match. When integrated with RAG, Semantic Search serves as an advanced retrieval mechanism that helps the LLM find the most contextually relevant information from a custom knowledge base.
 
-In this guide we provide practical notebooks and tips to dive into this topic:
+In this guide we provide practical notebooks and tips to implement a RAG pipeline (incl. chunking, vectorization, indexing, grounding, and chat memory):
 
-- [rag.llamaindex.nb.ipynb](./rag.llamaindex.nb.ipynb): RAG pipeline with [LlamaIndex](https://www.llamaindex.ai/).
-- [rag.langchain.nb.ipynb](./rag.langchain.nb.ipynb): RAG pipeline with [LangChain](https://python.langchain.com/docs/introduction/), illustrates chunking and hallucination.
-- [rag.local.nb.ipynb](./rag.local.nb.ipynb): RAG pipeline with a local quantized model.
+- [rag.llamaindex.nb.ipynb](./rag.llamaindex.nb.ipynb): RAG pipeline using [LlamaIndex](https://www.llamaindex.ai/) and OpenAI.
+- [rag.langchain.nb.ipynb](./rag.langchain.nb.ipynb): RAG pipeline using [LangChain](https://python.langchain.com/docs/introduction/).
+- [rag.local.nb.ipynb](./rag.local.nb.ipynb): RAG pipeline using a local quantized model.
 
 ![RAG Architecture](./static/rag-architecture.png)
 
@@ -52,6 +52,8 @@ f32_embeddings = model.encode(corpus,
                               batch_size=64,
                               show_progress_bar=True)
 ```
+
+Other embedding models supported by Sentence Transformers are: [BAAI/bge-small-en-v1.5](https://huggingface.co/BAAI/bge-m3), multilingual model providing state-of-the-art retrieval functionality, and [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), a basic model for semantic search.
 
 #### LlamaIndex
 
